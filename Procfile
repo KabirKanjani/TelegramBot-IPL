@@ -1,0 +1,1 @@
+worker: java -jar target/IPLbo-1.0-SNAPSHOT.jar
