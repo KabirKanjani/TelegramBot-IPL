@@ -27,7 +27,7 @@ public class Confi extends TelegramLongPollingBot
       {
 
           SendMessage message=new SendMessage();           
-      
+      String[] data1=null;
         String text=update.getMessage().getText();
           System.out.println(text);
           System.out.println(message.setChatId(update.getMessage().getChatId()));
@@ -41,9 +41,19 @@ public class Confi extends TelegramLongPollingBot
            else
            {
                getlink obj=new getlink();
-               message.setText(obj.getdata(text));
-               System.out.println(obj.getdata(text));
-               execute(message);
+               data1=obj.getdata(text);              
+               for (int i = 0; i <data1.length&&!data1[i].equals(""); i++) {
+                   
+                   message.setText(text+" "+data1[i]+" \n\n");
+                   System.out.println(message+" "+i);
+                   execute(message);
+                   i++;
+                   message.setText(data1[i]);
+                   execute(message);
+               }
+               
+               
+               
            }
       }
         catch(Exception e)

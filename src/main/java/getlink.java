@@ -1,5 +1,6 @@
 
 import java.sql.*;
+import java.util.Arrays;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,7 +14,7 @@ import java.sql.*;
  */
 public class getlink 
 {
-    public String getdata(String data) throws ClassNotFoundException, ClassNotFoundException, SQLException
+    public String[] getdata(String data) throws ClassNotFoundException, ClassNotFoundException, SQLException
     {
         String link = null;
         data=data+" ";
@@ -23,39 +24,26 @@ public class getlink
         int year=Integer.parseInt(col[2]);        
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/demo","root","root");
         Statement stmt=con.createStatement();      
-        try 
-        {
-            
-        {
-            String extra=col[3];
-            char ch=extra.charAt(0);
-            String sql="Select Link from ipl where team1='"+team1+"' AND team2='"+team2+"' AND year="+year+" AND Extra Like '"+ch+"%'";
-            System.out.println(sql);
-                      System.out.println(sql);
-           ResultSet rs=stmt.executeQuery(sql);
-           while(rs.next())
-           {
-               link=rs.getString(1);
-           }
- 
-        }
-        }
-        catch(ArrayIndexOutOfBoundsException e)
-        {
         
-           String sql="Select Link from ipl where team1='"+team1+"' AND team2='"+team2+"' AND year="+year+"";
+           String sql="Select Link,extra from ipl where year="+year+" AND team1='"+team1+"' AND team2='"+team2+"'OR team1='"+team2+"' AND team2='"+team1+"' AND year="+year+"";
            System.out.println(sql);
-           ResultSet rs=stmt.executeQuery(sql);
+           ResultSet rs=stmt.executeQuery(sql);           
+           String[] ar = {"","","","","","","",""};           
+           int ij=0;
            while(rs.next())
-           {
-               link=rs.getString(1);
-           }
-        }
-       return link;
+           {               
+               
+               ar[ij]=rs.getString("Extra");
+               ij++;
+               ar[ij]=rs.getString("link");               
+               ij++;
+               
+           }        
+       return ar;
         
     }
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         getlink obj=new getlink();        
-        System.out.println(obj.getdata("Csk RR 2008 final"));
+        System.out.println(Arrays.toString(obj.getdata("Csk RR 2008")));
     }
 }
