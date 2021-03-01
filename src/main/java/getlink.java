@@ -42,8 +42,5 @@ public class getlink
        return ar;
         
     }
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        getlink obj=new getlink();        
-        System.out.println(Arrays.toString(obj.getdata("Csk RR 2008")));
-    }
+ 
 }
