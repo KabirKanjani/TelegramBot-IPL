@@ -1,7 +1,7 @@
 
-import org.telegram.telegrambots.api.methods.send.SendMessage;
-import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Update;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,8 +20,8 @@ public class Confi extends TelegramLongPollingBot
     public String getBotToken() {
         return "1613165276:AAGIL7se6zAPwkA6Aa4RXx-qujEAw7uhILY";
     }
-
-    @Override
+       @Override
+ 
     public void onUpdateReceived(Update update) {
         try
       {
@@ -30,7 +30,7 @@ public class Confi extends TelegramLongPollingBot
       String[] data1=null;
         String text=update.getMessage().getText();
           System.out.println(text);
-          System.out.println(message.setChatId(update.getMessage().getChatId()));
+          message.setChatId(update.getMessage().getChatId().toString());
    
            if(text.equalsIgnoreCase("/start"))
            {
@@ -66,5 +66,6 @@ public class Confi extends TelegramLongPollingBot
     public String getBotUsername() {
         return "IPL1_BOT";
     }
+
     
 }
