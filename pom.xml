@@ -11,9 +11,14 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
-    
- <build>
+
+            <build>
   <plugins>
+       <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>1.2</version>
+</plugin>
     <plugin>
       <!-- Build an executable JAR -->
       <groupId>org.apache.maven.plugins</groupId>
@@ -29,6 +34,20 @@
         </archive>
       </configuration>
     </plugin>
+      <plugin>
+            <groupId>com.heroku.sdk</groupId>
+            <artifactId>heroku-maven-plugin</artifactId>
+            <version>0.4.4</version>
+            <configuration>
+                <jdkVersion>1.8</jdkVersion>
+                <!-- Use your own application name >>> heroku enforces lowcase names -->
+                <appName>stocknews</appName>
+                <processTypes>
+                    <!-- Tell Heroku how to launch your application -->
+                    <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.treslines.server.Server</web>
+                </processTypes>
+            </configuration>
+        </plugin>
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -39,23 +58,20 @@
             <goals>
               <goal>shade</goal>
             </goals>
-            <configuration>
-              
+  <configuration>
+        <descriptorRefs>
+                    <!-- This tells Maven to include all dependencies -->
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
       <shadedArtifactAttached>true</shadedArtifactAttached>
       <shadedClassifierName>launcher</shadedClassifierName> <!-- Can be any name that makes sense -->
-              <artifactSet>
-<!--                <excludes>
-                </excludes>-->
-              </artifactSet>
-            </configuration>
-          </execution>
+    </configuration>          </execution>
         </executions>
       </plugin>
   </plugins>
 </build>
     
-    
-    <repositories>
+        <repositories>
     <repository>
       <id>central</id>
       <name>Central Repository</name>
@@ -74,6 +90,11 @@
             <type>jar</type>
         </dependency>
         <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.3.4</version>
+    </dependency>
+        <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.12.1</version>
@@ -84,20 +105,19 @@
             <artifactId>emoji-java</artifactId>
             <version>3.2.0</version>
             <type>jar</type>
-        </dependency> 
+        </dependency>
         <dependency>
-    <groupId>mysql</groupId>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.5.4</version>
+</dependency>
+        <dependency>
+        <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.23</version>
 </dependency>
-        <dependency>
-            <groupId>org.telegram</groupId>
-            <artifactId>telegrambots-meta</artifactId>
-            <version>3.3</version>
-            <type>jar</type>
-        </dependency>
+
+
     </dependencies>
     <name>IPLbo</name>
 </project>
-
-

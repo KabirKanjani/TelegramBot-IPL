@@ -1,6 +1,8 @@
+import java.sql.SQLException;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -56,7 +58,7 @@ public class Confi extends TelegramLongPollingBot
                
            }
       }
-        catch(Exception e)
+        catch(ClassNotFoundException | SQLException | TelegramApiException e)
         {
         }
         
