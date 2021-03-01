@@ -1,6 +1,7 @@
 
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
+import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,7 +22,7 @@ public class Mainclass
         {
             ap.registerBot(new Confi());
         }
-        catch(Exception e)
+        catch(TelegramApiRequestException e)
         {
         }
 }
