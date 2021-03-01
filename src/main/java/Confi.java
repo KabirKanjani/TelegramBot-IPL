@@ -14,6 +14,7 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
  */
 public class Confi extends TelegramLongPollingBot
 {
+   
 
     @Override
     public String getBotToken() {
