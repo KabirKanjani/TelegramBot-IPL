@@ -106,12 +106,6 @@
             <artifactId>telegrambots</artifactId>
             <version>3.3</version>
             <type>jar</type>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.telegram</groupId>
-                    <artifactId>telegrambots-meta</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jsoup</groupId>
