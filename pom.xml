@@ -45,6 +45,7 @@
               <goal>shade</goal>
             </goals>
   <configuration>
+      <minimizeJar>True</minimizeJar>
       <shadedArtifactAttached>true</shadedArtifactAttached>
       <shadedClassifierName>launcher</shadedClassifierName> <!-- Can be any name that makes sense -->
     </configuration>          </execution>
@@ -93,3 +94,5 @@
     </dependencies>
     <name>IPLbo</name>
 </project>
+
+
