@@ -44,7 +44,7 @@
                 <appName>stocknews</appName>
                 <processTypes>
                     <!-- Tell Heroku how to launch your application -->
-                    <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.treslines.server.Server</web>
+<!--                    <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.treslines.server.Server</web>-->
                 </processTypes>
             </configuration>
         </plugin>
