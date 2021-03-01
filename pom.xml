@@ -33,7 +33,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
 <!--            <classpathPrefix>lib/</classpathPrefix>-->
-            <mainClass>C:\Users\Paresh\Documents\NetBeansProjects\IPLbo\src\main\java\Mainclass</mainClass>
+            <mainClass>src\main\java\Mainclass</mainClass>
           </manifest>
         </archive>
       </configuration>
