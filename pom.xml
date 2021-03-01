@@ -28,7 +28,7 @@
         <archive>
           <manifest>
             <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
+            <classpathPrefix>src/main/java</classpathPrefix>
             <mainClass>Mainclass</mainClass>
           </manifest>
         </archive>
