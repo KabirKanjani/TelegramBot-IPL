@@ -44,8 +44,8 @@
       <shadedArtifactAttached>true</shadedArtifactAttached>
       <shadedClassifierName>launcher</shadedClassifierName> <!-- Can be any name that makes sense -->
               <artifactSet>
-                <excludes>
-                </excludes>
+<!--                <excludes>
+                </excludes>-->
               </artifactSet>
             </configuration>
           </execution>
