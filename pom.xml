@@ -68,6 +68,15 @@
     </configuration>          </execution>
         </executions>
       </plugin>
+      <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>C:\Users\Paresh\.m2\repository\org\telegram\telegrambots-meta\3.3\telegrambots-meta-3.3.jar</include>
+                    </includes>
+                </configuration>
+            </plugin>
   </plugins>
 </build>
     
@@ -121,6 +130,7 @@
             <artifactId>telegrambots-meta</artifactId>
             <version>3.3</version>
         </dependency>
+        
     </dependencies>
     <name>IPLbo</name>
 </project>
