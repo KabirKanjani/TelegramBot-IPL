@@ -24,6 +24,7 @@
     <version>1.2</version>
 </plugin>
     <plugin>
+        
       <!-- Build an executable JAR -->
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-jar-plugin</artifactId>
@@ -33,7 +34,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
 <!--            <classpathPrefix>lib/</classpathPrefix>-->
-            <mainClass>src\main\java\Mainclass</mainClass>
+            <mainClass>Mainclass.java</mainClass>
           </manifest>
         </archive>
       </configuration>
@@ -92,6 +93,18 @@
     </repository>
   </repositories>
     <dependencies>
+         <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+    </dependency>
+
+
+    <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.22.2</version>
+    </dependency>
 <!-- https://mvnrepository.com/artifact/org.telegram/telegrambots -->
 
                 <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
@@ -129,11 +142,6 @@
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.23</version>
 </dependency>
-        <dependency>
-            <groupId>org.telegram</groupId>
-            <artifactId>telegrambots-meta</artifactId>
-            <version>3.3</version>
-        </dependency>
         
     </dependencies>
     <name>IPLbo</name>
