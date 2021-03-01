@@ -41,10 +41,10 @@
             <configuration>
                 <jdkVersion>1.8</jdkVersion>
                 <!-- Use your own application name >>> heroku enforces lowcase names -->
-                <appName>stocknews</appName>
+                <appName>rocky-castle-10753</appName>
                 <processTypes>
-                    <!-- Tell Heroku how to launch your application -->
-<!--                    <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.treslines.server.Server</web>-->
+                     <!--Tell Heroku how to launch your application--> 
+                    <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.treslines.server.Server</web>
                 </processTypes>
             </configuration>
         </plugin>
