@@ -32,8 +32,8 @@
         <archive>
           <manifest>
             <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
-            <MainClass>Mainclass</MainClass>
+<!--            <classpathPrefix>lib/</classpathPrefix>-->
+            <mainClass>Mainclass</mainClass>
           </manifest>
         </archive>
       </configuration>
