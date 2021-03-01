@@ -1,9 +1,6 @@
 
-import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
-
-
+import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.TelegramBotsApi;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,10 +14,9 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
  */
 public class Mainclass
 {
-    public static void main(String[] args) throws TelegramApiException {
-//        ApiContextInitializer.init();
-        
-        TelegramBotsApi ap = new TelegramBotsApi(DefaultBotSession.class);
+    public static void main(String[] args) {
+        ApiContextInitializer.init();
+        TelegramBotsApi ap=new TelegramBotsApi();
         try
         {
             ap.registerBot(new Confi());
