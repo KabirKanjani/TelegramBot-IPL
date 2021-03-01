@@ -33,25 +33,25 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>Mainclass</mainClass>
+            <MainClass>Mainclass</MainClass>
           </manifest>
         </archive>
       </configuration>
     </plugin>
-      <plugin>
+<!--      <plugin>
             <groupId>com.heroku.sdk</groupId>
             <artifactId>heroku-maven-plugin</artifactId>
             <version>0.4.4</version>
             <configuration>
                 <jdkVersion>1.8</jdkVersion>
-                <!-- Use your own application name >>> heroku enforces lowcase names -->
+                 Use your own application name >>> heroku enforces lowcase names 
                 <appName>rocky-castle-10753</appName>
                 <processTypes>
-                     <!--Tell Heroku how to launch your application--> 
+                     Tell Heroku how to launch your application 
                     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.treslines.server.Server</web>
                 </processTypes>
             </configuration>
-        </plugin>
+        </plugin>-->
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
