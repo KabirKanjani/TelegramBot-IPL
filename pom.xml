@@ -11,9 +11,20 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
-           <build>
+
+            <build>
   <plugins>
+      <plugin>
+  <artifactId>maven-compiler-plugin</artifactId>
+  <version>2.3.2</version>
+      </plugin>
+       <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>1.2</version>
+</plugin>
     <plugin>
+        
       <!-- Build an executable JAR -->
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-jar-plugin</artifactId>
@@ -23,11 +34,25 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>Mainclass</mainClass>
+            <mainClass>Mainclass.main</mainClass>
           </manifest>
         </archive>
       </configuration>
     </plugin>
+<!--      <plugin>
+            <groupId>com.heroku.sdk</groupId>
+            <artifactId>heroku-maven-plugin</artifactId>
+            <version>0.4.4</version>
+            <configuration>
+                <jdkVersion>1.8</jdkVersion>
+                 Use your own application name >>> heroku enforces lowcase names 
+                <appName>rocky-castle-10753</appName>
+                <processTypes>
+                     Tell Heroku how to launch your application 
+                    <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.treslines.server.Server</web>
+                </processTypes>
+            </configuration>
+        </plugin>-->
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -38,18 +63,27 @@
             <goals>
               <goal>shade</goal>
             </goals>
-            <configuration>
-              <artifactSet>
-                <excludes>
-                </excludes>
-              </artifactSet>
-            </configuration>
-          </execution>
+  <configuration>
+        <descriptorRefs>
+                    <!-- This tells Maven to include all dependencies -->
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+      <shadedArtifactAttached>true</shadedArtifactAttached>
+      <shadedClassifierName>launcher</shadedClassifierName> <!-- Can be any name that makes sense -->
+    </configuration>          </execution>
         </executions>
       </plugin>
+      <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>C:\Users\Paresh\.m2\repository\org\telegram\telegrambots-meta\3.3\telegrambots-meta-3.3.jar</include>
+                    </includes>
+                </configuration>
+            </plugin>
   </plugins>
 </build>
- 
     
         <repositories>
     <repository>
