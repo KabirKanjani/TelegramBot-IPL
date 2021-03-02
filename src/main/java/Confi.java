@@ -36,7 +36,7 @@ public class Confi extends TelegramLongPollingBot
    
            if(text.equalsIgnoreCase("/start"))
            {
-               message.setText("Enter The Ipl game you want in this format : Team1 Team2 Year\n\nExample :CSK RCB 2019");               
+               message.setText("Enter The Ipl game you want in this format : Team1 Team2 Year\n\nEnter DCD=Delhi Capitals\n\nDC = Decan Chargers\n\nPK=Punjab Kings\n\nPW=Pune Warriors\n\nKTK=Kochi tuskers Kerala\n\n Example :CSK RCB 2019");               
                System.out.println("Hey");
                execute(message);
            }
