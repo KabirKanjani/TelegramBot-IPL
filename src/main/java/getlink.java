@@ -16,15 +16,16 @@ public class getlink
 {
     public String[] getdata(String data) throws ClassNotFoundException, ClassNotFoundException, SQLException
     {
+        
         String link = null;
         data=data+" ";
         String[] col=data.split(" ");
         String team1=col[0];
         String team2=col[1];        
-        int year=Integer.parseInt(col[2]);        
+        int year=Integer.parseInt(col[2]);                
         Connection con=DriverManager.getConnection("jdbc:mysql://us-cdbr-east-03.cleardb.com:3306/heroku_9a2a00fe8616863","ba7ec80cea180c","cff8a7dd");
         Statement stmt=con.createStatement();      
-        
+        System.out.println("hello1");
            String sql="Select Link,extra from ipl where year="+year+" AND team1='"+team1+"' AND team2='"+team2+"'OR team1='"+team2+"' AND team2='"+team1+"' AND year="+year+"";
            System.out.println(sql);
            ResultSet rs=stmt.executeQuery(sql);           
@@ -38,9 +39,13 @@ public class getlink
                ar[ij]=rs.getString("link");               
                ij++;
                
-           }        
+           }
+           System.out.println(ar[1]);
        return ar;
         
     }
- 
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        getlink obj=new getlink();
+        obj.getdata("CSK RCB 2019");
+    }
 }
