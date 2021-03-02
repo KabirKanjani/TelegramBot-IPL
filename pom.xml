@@ -39,7 +39,10 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-    
+             
+          <additionalClasspathElements>            
+            <additionalClasspathElement>C:\Users\Paresh\Documents\NetBeansProjects\IPLbo\repo\telegram\telegrambots-meta\3.3\telegrambots-meta-3.3.jar</additionalClasspathElement>
+          </additionalClasspathElements>        
       <shadedArtifactAttached>true</shadedArtifactAttached>
       <shadedClassifierName>launcher</shadedClassifierName> 
     
@@ -63,13 +66,6 @@
     </repository>
   </repositories>
     <dependencies>
-<!-- https://mvnrepository.com/artifact/org.telegram/telegrambots -->
-<!-- https://mvnrepository.com/artifact/org.telegram/telegrambots-meta -->
-<dependency>
-    <groupId>org.telegram</groupId>
-    <artifactId>telegrambots-meta</artifactId>
-    <version>3.3</version>
-</dependency>
 
         <dependency>
             <groupId>org.telegram</groupId>
