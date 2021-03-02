@@ -11,12 +11,11 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
-
-            <build>
+           <build>
   <plugins>
-            <!-- Build an executable JAR -->
-            <plugin>
-      <groupId> org.apache.maven.plugins</groupId>
+    <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-jar-plugin</artifactId>
       <version>3.1.0</version>
       <configuration>
@@ -29,31 +28,6 @@
         </archive>
       </configuration>
     </plugin>
-
-      <plugin>
-  <artifactId>maven-compiler-plugin</artifactId>
-  <version>2.3.2</version>
-      </plugin>
-       <plugin>
-    <groupId>org.codehaus.mojo</groupId>
-    <artifactId>exec-maven-plugin</artifactId>
-    <version>1.2</version>
-</plugin>    
-<!--      <plugin>
-            <groupId>com.heroku.sdk</groupId>
-            <artifactId>heroku-maven-plugin</artifactId>
-            <version>0.4.4</version>
-            <configuration>
-                <jdkVersion>1.8</jdkVersion>
-                 Use your own application name >>> heroku enforces lowcase names 
-                <appName>rocky-castle-10753</appName>
-                <processTypes>
-                     Tell Heroku how to launch your application 
-                    <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.treslines.server.Server</web>
-                </processTypes>
-            </configuration>
-        </plugin>-->
-    
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -73,17 +47,9 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <includes>
-                        <include>C:\Users\Paresh\.m2\repository\org\telegram\telegrambots-meta\3.3\telegrambots-meta-3.3.jar</include>
-                    </includes>
-                </configuration>
-            </plugin>
   </plugins>
 </build>
+ 
     
         <repositories>
     <repository>
