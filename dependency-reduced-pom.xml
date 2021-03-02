@@ -21,6 +21,15 @@
         </configuration>
       </plugin>
       <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2</version>
+      </plugin>
+      <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.2.4</version>
         <executions>
@@ -37,13 +46,21 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>C:\Users\Paresh\.m2\repository\org\telegram\telegrambots-meta\3.3\telegrambots-meta-3.3.jar</include>
+          </includes>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <repositories>
     <repository>
       <id>central</id>
       <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
+      <url>http://repo.maven.apache.org/maven2</url>
     </repository>
   </repositories>
   <properties>
