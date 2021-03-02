@@ -22,7 +22,7 @@ public class Mainclass
         {
             ap.registerBot(new Confi());
         }
-        catch(TelegramApiRequestException e)
+        catch(Exception e)
         {
         }
 }
