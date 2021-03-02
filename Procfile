@@ -1,1 +1,1 @@
-worker: java -jar target/IPLbo-1.0-SNAPSHOT-jar-with-dependencies.jar
+worker: java -jar target/original-IPLbo-1.0-SNAPSHOT.jar
