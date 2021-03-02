@@ -34,7 +34,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix></classpathPrefix>
-            <mainClass>Mainclass</mainClass>
+            <mainClass>main</mainClass>
           </manifest>
         </archive>
       </configuration>
