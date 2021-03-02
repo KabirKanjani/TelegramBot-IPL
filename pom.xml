@@ -41,9 +41,10 @@
             <configuration>
     
       <shadedArtifactAttached>true</shadedArtifactAttached>
-      <shadedClassifierName>launcher</shadedClassifierName> <!-- Can be any name that makes sense -->
+      <shadedClassifierName>launcher</shadedClassifierName> 
     
               <artifactSet>
+                  
                 <excludes>
                 </excludes>
               </artifactSet>
@@ -63,9 +64,13 @@
   </repositories>
     <dependencies>
 <!-- https://mvnrepository.com/artifact/org.telegram/telegrambots -->
+<!-- https://mvnrepository.com/artifact/org.telegram/telegrambots-meta -->
+<dependency>
+    <groupId>org.telegram</groupId>
+    <artifactId>telegrambots-meta</artifactId>
+    <version>3.3</version>
+</dependency>
 
-                <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
-<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
         <dependency>
             <groupId>org.telegram</groupId>
             <artifactId>telegrambots</artifactId>
