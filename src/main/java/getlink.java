@@ -23,7 +23,7 @@ public class getlink
         String team1=col[0];
         String team2=col[1];        
         int year=Integer.parseInt(col[2]);                
-        Connection con=DriverManager.getConnection("jdbc:mysql://us-cdbr-east-03.cleardb.com:3306/heroku_9a2a00fe8616863","ba7ec80cea180c","cff8a7dd");
+        Connection con=DriverManager.getConnection("jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_dabc09d301bacbd","bf72ebcdbb48f4","00ca6c8a");
         Statement stmt=con.createStatement();      
         System.out.println("hello1");
            String sql="Select Link,extra from ipl where year="+year+" AND team1='"+team1+"' AND team2='"+team2+"'OR team1='"+team2+"' AND team2='"+team1+"' AND year="+year+"";
